@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover, maximum-scale=3, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>红包</title>
+
+	<script type="text/javascript" src="lib/vue/vue.min.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="css/animate.min.css">
+	<link rel="stylesheet" type="text/css" href="css/base.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<script type="text/javascript" src="js/rem_scaler.js"></script>
+</head>
+<body>
+   <div id="app">
+	   <div class="main">
+		   <img class="qiaoba" src="images/qiaoba.png" />
+		   <div class="page1">
+              <div class="page2-top">
+              	<img class="page2-top-title" src="images/page1_title0.png" />
+              	<img class="page2-top-back" src="images/page2_title0_back.png"/>
+              </div>
+              <div class="page2-bottom">
+                <div class="flex justify-between align-end" style="padding-top:0.3rem">
+					 <div class="floorFirst">
+						 <div class="floorFirst-top topBack1">
+							 <div class="floor1_poto">
+								  <img :src="obj2.xlbImg"/>
+							 </div>
+							
+							 <img class="floor1_img" src="images/page1_floor2.png"/>
+						 </div>
+						 <div class="floorFirst-bottom">
+							 <p class="floorFirst-bottom-p1" >{{obj2.xlbName}}</p>
+							 <p class="floorFirst-bottom-p2">{{obj2.total}}</p>
+						 </div>
+					 </div>
+					 <div class="floorSen">
+						 <div class="floorFirst-top topBack2">
+							 <img class="floor1_poto" :src="obj1.xlbImg"/>
+							 <img class="floor1_img" src="images/page1_floor1.png"/>
+						 </div>
+						 <div class="floorFirst-bottom">
+							 <p class="floorFirst-bottom-p1">{{obj1.xlbName}}</p>
+							 <p class="floorFirst-bottom-p2">{{obj1.total}}</p>
+						 </div>
+					 </div>
+					 <div class="floorFirst">
+						 <div class="floorFirst-top topBack3">
+							 <img class="floor1_poto" :src="obj3.xlbImg" />
+							 <img class="floor1_img" src="images/page1_floor3.png"/>
+						 </div>
+						 <div class="floorFirst-bottom">
+							 <p class="floorFirst-bottom-p1">{{obj3.xlbName}}</p>
+							 <p class="floorFirst-bottom-p2">{{obj3.total}}</p>
+						 </div>
+					 </div>
+				</div>
+				<div class="floorUl">
+				  <li class="floorUl-li flex justify-between align-center" v-for="(item,index) in listOther" :key="item.xlbId">
+					 <div class="flex  align-center">
+						 <img class="floorUl-li-floor" :src="imgfoorNum[index]" />
+						 <img class="floorUl-li-poto" :src="item.xlbImg" />
+						 <span class="floorUl-li-name">{{item.xlbName}}</span>
+					 </div> 
+					 <div class="floorUl-li-num">{{item.total}}享乐豆</div>
+				  </li>
+				</div>
+              </div>
+			  
+		   </div>
+           <div class="page2">
+			    <div class="page2-top">
+					<img class="page2-top-title" src="images/page2_title0.png" />
+					<img class="page2-top-back" src="images/page2_title0_back.png"/>
+				</div>
+				<div class="page2-bottom">
+					<img class="page2-bottom-title bottom-title1" src="images/page2_title1.png" />
+					<p class="page2-bottom-p1">看视频领红包-最多可领50000享乐豆。</p>
+					<img class="page2-bottom-title" src="images/page2_title2.png" />
+					<p class="page2-bottom-p1">2021年8月6日00:00-2021年8月30日23:59</p>
+					<img class="page2-bottom-title" src="images/page2_title3.png" />
+					<p class="page2-bottom-p1">享乐吧手机客户端用户。</p>
+					<img class="page2-bottom-title" src="images/page2_title4.png" />
+					<p class="page2-bottom-p1">享乐豆奖励</p>
+					<img class="page2-bottom-title" src="images/page2_title5.png" />
+					<p class="page2-bottom-p1 page2-bottom-p2">活动时间内，用户在享乐吧APP，通过观看视频，平台自动派发红包，即可获得1-50000个不同数量的享乐豆，看的越多，几率越大，看的越长，惊喜越多。领取的享乐豆明细可在“我的”-“我的享乐豆”-“明细”里查看。</p>
+					<div class="page2-cont-6" style="margin-bottom:0.21rem;">
+						<img class="page2-bottom-title bottom-title6" src="images/page2_title6.png" />
+						<p class="page2-bottom-p1 page2-bottom-p2 color1">每个用户仅限使用1个账号参与活动(同一享乐吧账号、手机号、移动设备、身份证以及其他信息相同均视为同一账号)。活动过程中，用户如更换账号，前一帐号下获得的相关奖励无法同步。</p>
+					</div>
+					<div class="page2-cont-6">
+						<img class="page2-bottom-title bottom-title6" src="images/page2_title7.png" />
+						<p class="page2-bottom-p1 page2-bottom-p2 color1">您若有下列任何一种行为或情况的，享乐吧平台有权单方面取消您的参与资格、购买资格等：以任何机器人软件、蜘蛛软件、爬虫软件、刷奖软件或其它任何自动方式、不正当手段参与本活动的；</p>
+					</div>
+				</div>
+		   </div>
+		   <div class="main-bottom">-享乐吧官方-</div>
+	   </div>
+   </div>
+</body>
+</html>
+<script type="text/javascript" src="js/includeCommon.js" level="0" ></script>
+	
+<script src="api/index.js"></script>
+<script>
+	var vm = new Vue({
+		el: '#app',
+		data: {
+			obj1:{},
+			obj2:{},
+			obj3:{},
+			listOther:[],
+			imgfoorNum:['images/page1_floor4.png',
+			            'images/page1_floor5.png',
+						'images/page1_floor6.png',
+						'images/page1_floor7.png',
+						'images/page1_floor8.png',
+						'images/page1_floor9.png',
+						'images/page1_floor10.png',
+			]
+		},
+		created () {
+			this.getTop()
+		},
+		mounted () {
+		 
+		},
+		methods: {
+			getTop(){
+				topApi().then(function(res){
+					if(res.code==200){
+						var listAry=res.data;
+						vm.obj1=listAry.slice(0,1)[0];
+						vm.obj2=listAry.slice(1,2)[0];
+						vm.obj3=listAry.slice(2,3)[0];
+						vm.listOther=listAry.slice(3,listAry.length);
+
+					}
+				})
+				
+			},
+		}
+	});
+</script>
